@@ -21,4 +21,15 @@ class WinCheck {
           System.out.println(arnNs[i]);             
         }
     }
+   static void Check(){
+       for(int i=0;i<9;i++){
+           if(arnNs[i]==1){
+               if(arnNs[(i+1)]==1){
+                   if(arnNs[(i+2)]==1){
+                       PanDisp.pangame.Updawg();
+                   }
+               }
+           }
+       }
+   }
 }

@@ -14,7 +14,7 @@ import javax.swing.JPanel;
  */
 public class PanDisp extends JPanel {
 
-    public PanGame pangame = new PanGame();
+    public static PanGame pangame = new PanGame();
     public PanMain panmain = new PanMain();
     public PanScore panscore = new PanScore();
     public PanPrompt panprompt = new PanPrompt();

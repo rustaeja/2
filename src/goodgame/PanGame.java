@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+
 public class PanGame extends JPanel implements ActionListener {
 
     boolean isX = true;
@@ -13,8 +14,12 @@ public class PanGame extends JPanel implements ActionListener {
     int nCount = 0;
     JButton btn[] = new JButton[9];
     String don;
+    JLabel lblWin = new JLabel();
+    
 
     public PanGame() {
+        lblWin.setText("WINNNNNNNN");
+        lblWin.setFont(new Font("ALGERIAN", Font.PLAIN, 50));
         setLayout(new GridLayout(3, 3));
         for (int i = 0; i < 9; i++) {
             btn[i] = new JButton();
@@ -46,8 +51,17 @@ public class PanGame extends JPanel implements ActionListener {
         btn[j].setEnabled(false);
         WinCheck.set(arnN);
         nCount++;
-        if(nCount==9){
-        WinCheck.print();    
-        } 
+        if (nCount == 9) {
+            WinCheck.print();
+        }
+        WinCheck.Check();
+    }
+    void Updawg(){
+       for(int don=0;don<9;don++){
+           remove(btn[don]);
+       }
+       add(lblWin);
+       repaint();
+       revalidate();
     }
 }
