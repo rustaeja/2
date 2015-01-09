@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package goodgame;
 
 import java.awt.BorderLayout;
@@ -11,11 +6,6 @@ import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-
-/**
- *
- * @author Justin
- */
 public class PanGame extends JPanel implements ActionListener {
 
     boolean isX = true;
@@ -39,7 +29,6 @@ public class PanGame extends JPanel implements ActionListener {
         for (int i = 0; i < 9; i++) {
             if (evt.getSource() == btn[i]) {
                 j = i;
-                System.out.print(i);
                 break;
             }
         }
@@ -57,5 +46,8 @@ public class PanGame extends JPanel implements ActionListener {
         btn[j].setEnabled(false);
         WinCheck.set(arnN);
         nCount++;
+        if(nCount==9){
+        WinCheck.print();    
+        } 
     }
 }
