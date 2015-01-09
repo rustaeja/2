@@ -13,14 +13,13 @@ import javax.swing.JFrame;
  *
  * @author struj3903
  */
-public class FraMain extends JFrame{
+public class FraMain extends JFrame {
 
-   PanDisp pandisp = new PanDisp();
+    PanDisp pandisp = new PanDisp();
     // public PanMain panMain = new PanMain();
 
     public FraMain() throws Exception {
-       
         setSize(500, 500);
         add(pandisp);
     }
-    }
+}
