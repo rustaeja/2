@@ -60,12 +60,15 @@ class WinCheck {
                     PanDisp.pangame.UpdawgX();
                 }
             }
+        }
+            if(arnNs[5]==1){
             if (arnNs[(4)] == 1) {
                 if (arnNs[(3)] == 1) {
-                    PanDisp.pangame.UpdawgX();
+                    PanDisp.pangame.UpdawgO();
                 }
             }
         }
+       
         if (arnNs[6] == 1) { // checks 7,8,9
             if (arnNs[(7)] == 1) {
                 if (arnNs[(8)] == 1) {
@@ -107,12 +110,14 @@ class WinCheck {
                     PanDisp.pangame.UpdawgO();
                 }
             }
+        }if(arnNs[5]==2){
             if (arnNs[(4)] == 2) {
                 if (arnNs[(3)] == 2) {
                     PanDisp.pangame.UpdawgO();
                 }
             }
         }
+       
         if (arnNs[6] == 2) { // checks 7,8,9
             if (arnNs[(7)] == 2) {
                 if (arnNs[(8)] == 2) {
