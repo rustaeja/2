@@ -1,15 +1,15 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package goodgame;
 
+
 /**
  *
- * @author Justin
+ * @author struj3903
  */
-class WinCheck {
+class AiCheck {
 
     static int arnNs[] = new int[9];
     static boolean isX;
@@ -29,11 +29,22 @@ class WinCheck {
 
         if (arnNs[0] == 1) {//checks 123, 147, 159
             if (arnNs[1] == 1) {
+                if (!isX) {
+                    PanGame.btn[2].setText("O");
+                    PanGame.btn[2].setEnabled(false);
+                    PanGame.set(isX);
+                    arnNs[2] = 2;
+                }
                 if (arnNs[2] == 1) {
                     PanDisp.pangame.UpdawgX();
                 }
             }
             if (arnNs[3] == 1) {
+                if (!isX) {
+                    PanGame.btn[6].setText("O");
+                    PanGame.btn[6].setEnabled(false);
+                    PanGame.set(isX);
+                }
                 if (arnNs[6] == 1) {
                     PanDisp.pangame.UpdawgX();
                 }
@@ -126,23 +137,19 @@ class WinCheck {
                 }
             }
         }
-
         if (arnNs[6] == 2) { // checks 7,8,9
             if (arnNs[(7)] == 2) {
                 if (arnNs[(8)] == 2) {
                     PanDisp.pangame.UpdawgO();
                 }
             }
-        }
+        } 
         if (arnNs[2] == 2) {
             if (arnNs[4] == 2) {
                 if (arnNs[6] == 2) {
-                    PanDisp.pangame.UpdawgX();
-                    System.out.println("rut :D");
+                    PanDisp.pangame.UpdawgO();
                 }
             }
         }
-
-
     }
 }

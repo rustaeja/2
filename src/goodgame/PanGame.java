@@ -9,14 +9,17 @@ import javax.swing.*;
 
 public class PanGame extends JPanel implements ActionListener {
 
-    boolean isX = true;
+    static boolean isX = true;
     int arnN[] = new int[9];
-    int nCount = 0;
-    JButton btn[] = new JButton[9];
+    int nCount = 0, nBtn = 0;
+    static JButton btn[] = new JButton[9];
     String don;
     JLabel lblWin = new JLabel();
+    JLabel lblcats = new JLabel();
 
     public PanGame() {
+        lblcats.setText("Cat's Game. :D");
+        lblcats.setFont(new Font("ALGERIAN", Font.PLAIN, 20));
         lblWin.setFont(new Font("ALGERIAN", Font.PLAIN, 20));
         setLayout(new GridLayout(3, 3));
         for (int i = 0; i < 9; i++) {
@@ -27,7 +30,12 @@ public class PanGame extends JPanel implements ActionListener {
         }
     }
 
+    static void set(boolean _isX) {
+        isX = _isX;
+    }
+
     public void actionPerformed(ActionEvent evt) {
+        System.out.println(isX);
         int j = 0;
         for (int i = 0; i < 9; i++) {
             if (evt.getSource() == btn[i]) {
@@ -48,12 +56,39 @@ public class PanGame extends JPanel implements ActionListener {
             PanPrompt.lblTurn.setText("Player 2's Turn (O)");
         }
         btn[j].setEnabled(false);
-        WinCheck.set(arnN, isX);
+        if (PanMM.rbTwo.isSelected()) {
+            WinCheck.set(arnN, isX);
+            PanPrompt.set(isX);
+        } else if (PanMM.rbAI.isSelected()) {
+            AiCheck.set(arnN, isX);
+        }
         nCount++;
         if (nCount == 9) {
-            WinCheck.print();
+            for (int i = 0; i < 9; i++) {
+                if (arnN[i] == 1 || arnN[i] == 2) {
+                    nBtn++;
+                }
+            }
+
+            if (PanMM.rbTwo.isSelected()) {
+                WinCheck.print();
+            } else if (PanMM.rbAI.isSelected()) {
+                AiCheck.print();
+            }
         }
-        WinCheck.Check();
+        if (PanMM.rbTwo.isSelected()) {
+            WinCheck.Check();
+        } else if (PanMM.rbAI.isSelected()) {
+            AiCheck.Check();
+        }
+        if (nBtn == 9) {
+            System.out.println("all");
+            for (int bry = 0; bry < 9; bry++) {
+                remove(btn[bry]);
+            }
+            System.out.println("all");
+            add(lblcats);
+        }
     }
 
     void UpdawgX() {
@@ -82,6 +117,7 @@ public class PanGame extends JPanel implements ActionListener {
             btn[beems].setEnabled(true);
             arnN[beems] = 0;
             add(btn[beems]);
+            remove(lblcats);
             remove(lblWin);
             repaint();
             revalidate();
