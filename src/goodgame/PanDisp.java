@@ -18,7 +18,7 @@ public class PanDisp extends JPanel {
     public PanMain panmain = new PanMain();
     public PanScore panscore = new PanScore();
     public PanPrompt panprompt = new PanPrompt();
-    public PanMM panmm = new PanMM();
+    public static PanMM panmm = new PanMM();
 
     public PanDisp() {
         setLayout(new BorderLayout());

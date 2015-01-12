@@ -28,14 +28,22 @@ public class PanScore extends JPanel {
     public PanScore() {
         lblScore.setText("Score: " + nScore);
         add(lblScore);
+        
         tmrTime.scheduleAtFixedRate(new TimerTask() {
             public void run() {
+                if(!FraMain.isHome){
                 nTime++;
                 sTime = Integer.toString(nTime);
                 lblTime.setText("Time: " + sTime);
                 add(lblTime);
                 repaint();
                 revalidate();
+                }
+                if(FraMain.isHome){
+                    nTime=0;
+                    revalidate();
+                    repaint();
+                }
             }
         }, 0, 1000);
 

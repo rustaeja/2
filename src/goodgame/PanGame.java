@@ -15,11 +15,9 @@ public class PanGame extends JPanel implements ActionListener {
     JButton btn[] = new JButton[9];
     String don;
     JLabel lblWin = new JLabel();
-    
 
     public PanGame() {
-        lblWin.setText("WINNNNNNNN");
-        lblWin.setFont(new Font("ALGERIAN", Font.PLAIN, 50));
+        lblWin.setFont(new Font("ALGERIAN", Font.PLAIN, 20));
         setLayout(new GridLayout(3, 3));
         for (int i = 0; i < 9; i++) {
             btn[i] = new JButton();
@@ -46,22 +44,47 @@ public class PanGame extends JPanel implements ActionListener {
             isX = true;
             btn[j].setText("O");
             arnN[j] = 2;
+
             PanPrompt.lblTurn.setText("Player 2's Turn (O)");
         }
         btn[j].setEnabled(false);
-        WinCheck.set(arnN);
+        WinCheck.set(arnN, isX);
         nCount++;
         if (nCount == 9) {
             WinCheck.print();
         }
         WinCheck.Check();
     }
-    void Updawg(){
-       for(int don=0;don<9;don++){
-           remove(btn[don]);
-       }
-       add(lblWin);
-       repaint();
-       revalidate();
+
+    void UpdawgX() {
+        for (int don = 0; don < 9; don++) {
+            remove(btn[don]);
+        }
+        lblWin.setText("Player 1 wins! (X)");
+        add(lblWin);
+        repaint();
+        revalidate();
+    }
+
+    void UpdawgO() {
+        for (int don = 0; don < 9; don++) {
+            remove(btn[don]);
+        }
+        lblWin.setText("Player 2 wins! (O)");
+        add(lblWin);
+        repaint();
+        revalidate();
+    }
+
+    void reset() {
+        for (int beems = 0; beems < 9; beems++) {
+            btn[beems].setText("");
+            btn[beems].setEnabled(true);
+            arnN[beems] = 0;
+            add(btn[beems]);
+            remove(lblWin);
+            repaint();
+            revalidate();
+        }
     }
 }
