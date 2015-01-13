@@ -1,17 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package goodgame;
-
+import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
-/**
- *
- * @author Justin
- */
 public class PanPrompt extends JPanel {
 
     public static JLabel lblTurn = new JLabel();
@@ -22,6 +12,7 @@ public class PanPrompt extends JPanel {
     }
 
     public PanPrompt() {
+         lblTurn.setFont(new Font("ALGERIAN", Font.PLAIN, 20));
        add(lblTurn);
     }
 }

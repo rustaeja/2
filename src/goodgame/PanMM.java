@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package goodgame;
 
 import java.awt.GridLayout;
@@ -13,10 +9,6 @@ import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-/**
- *
- * @author Justin
- */
 public class PanMM extends JPanel implements ActionListener {
 
     JButton btnMain = new JButton();

@@ -49,17 +49,16 @@ public class PanGame extends JPanel implements ActionListener {
             isX = false;
             btn[j].setText("X");
             arnN[j] = 1;
-            PanPrompt.lblTurn.setText("Player 1's Turn (X)");
+            PanPrompt.lblTurn.setText("Player 2's Turn (O)");
         } else {
             isX = true;
             btn[j].setText("O");
             arnN[j] = 2;
-            PanPrompt.lblTurn.setText("Player 2's Turn (O)");
+            PanPrompt.lblTurn.setText("Player 1's Turn (X)");
         }
         btn[j].setEnabled(false);
         if (PanMM.rbTwo.isSelected()) {
             WinCheck.set(arnN, isX);
-            PanPrompt.set(isX);
         } else if (PanMM.rbAI.isSelected()) {
             AiCheck.set(arnN, isX);
         }

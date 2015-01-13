@@ -1,17 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package goodgame;
 
 import javax.swing.JFrame;
 
-/**
- *
- * @author Justin
- */
 public class Main {
 
     /**
@@ -21,5 +11,6 @@ public class Main {
       FraMain frame = new FraMain();
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        
     }
 }
