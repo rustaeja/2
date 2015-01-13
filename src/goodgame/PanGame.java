@@ -1,5 +1,6 @@
 package goodgame;
 
+import static goodgame.AiCheck.isX;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -10,7 +11,7 @@ import javax.swing.*;
 public class PanGame extends JPanel implements ActionListener {
 
     static boolean isX = true;
-    int arnN[] = new int[9];
+    static int arnN[] = new int[9];
     int nCount = 0, nBtn = 0;
     static JButton btn[] = new JButton[9];
     String don;
@@ -43,6 +44,7 @@ public class PanGame extends JPanel implements ActionListener {
                 break;
             }
         }
+        System.out.println(isX);
         if (isX) {
             isX = false;
             btn[j].setText("X");
@@ -52,7 +54,6 @@ public class PanGame extends JPanel implements ActionListener {
             isX = true;
             btn[j].setText("O");
             arnN[j] = 2;
-
             PanPrompt.lblTurn.setText("Player 2's Turn (O)");
         }
         btn[j].setEnabled(false);
@@ -121,6 +122,15 @@ public class PanGame extends JPanel implements ActionListener {
             remove(lblWin);
             repaint();
             revalidate();
+        }
+    }
+
+    static void X() {
+        if (!isX) {
+            PanGame.btn[2].setText("O");
+            PanGame.btn[2].setEnabled(false);
+            PanGame.set(isX);
+            arnN[2] = 2;
         }
     }
 }

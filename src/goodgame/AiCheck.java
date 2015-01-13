@@ -1,14 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package goodgame;
-
-
-/**
- *
- * @author struj3903
- */
 class AiCheck {
 
     static int arnNs[] = new int[9];
@@ -29,22 +19,13 @@ class AiCheck {
 
         if (arnNs[0] == 1) {//checks 123, 147, 159
             if (arnNs[1] == 1) {
-                if (!isX) {
-                    PanGame.btn[2].setText("O");
-                    PanGame.btn[2].setEnabled(false);
-                    PanGame.set(isX);
-                    arnNs[2] = 2;
-                }
+                PanGame.X();
                 if (arnNs[2] == 1) {
                     PanDisp.pangame.UpdawgX();
                 }
             }
             if (arnNs[3] == 1) {
-                if (!isX) {
-                    PanGame.btn[6].setText("O");
-                    PanGame.btn[6].setEnabled(false);
-                    PanGame.set(isX);
-                }
+                PanGame.X();
                 if (arnNs[6] == 1) {
                     PanDisp.pangame.UpdawgX();
                 }
@@ -70,6 +51,9 @@ class AiCheck {
                 if (arnNs[(8)] == 1) {
                     PanDisp.pangame.UpdawgX();
                 }
+            }
+            if(arnNs[1]==1){
+                  PanGame.X();
             }
         }
         if (arnNs[5] == 1) {
